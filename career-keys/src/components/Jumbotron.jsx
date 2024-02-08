@@ -1,32 +1,19 @@
 export default function Jumbotron() {
     return <>
-<header>
-{/* Hero section with background image, heading, subheading and button */}
-<div
-    className="relative h-96 overflow-hidden bg-cover bg-no-repeat p-12 text-center lg:h-screen"
-    style="background-image: url('https://tecdn.b-cdn.net/img/Photos/Inne/ostia.jpg')">
-    <div
-      className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
-      style="background-color: rgba(2, 56, 53, 0.7)">
-      <div className="flex h-full items-center justify-center">
-        <div className="text-white">
-          <h2 className="mb-4 text-4xl font-semibold">
-            The background photo shows Lido di Ostia
-          </h2>
-          <h4 className="mb-6 text-xl font-semibold">
-            It is a coastal town in Italy that is part of Rome
-          </h4>
-          <button
-            type="button"
-            className="rounded border-2 border-neutral-50 px-7 pb-[8px] pt-[10px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-            data-te-ripple-init
-            data-te-ripple-color="light">
-            Learn more about Rome
-          </button>
+
+<section class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+    <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Unlock the keyword power!</h1>
+        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"> Get your CV ready woth keywords </p>
+        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                Search now!
+                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a>
         </div>
-      </div>
     </div>
-  </div>
-</header>
+</section>
     </>
 }

@@ -17,6 +17,6 @@ export default function Nav() {
           </ul>
         </div>
       </div>
-    </nav>;
+    </nav>
     </>
 }

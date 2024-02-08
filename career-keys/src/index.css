@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --wine: #64194a;
-    --pink: #da5c61;
-}
+
+.flex {width: 50%; position: absolute; margin-top: 3%; margin-left: 3%;}
+.location {width: 30%; display:inline-block; color: black !important; background-color:white !important;}
+.jsearch {width: 65%; display:inline-block; color: black !important; background-color:white !important;}
+
+#dropdown-button {color: black !important; background-color:white !important;}
+

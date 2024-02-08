@@ -9,7 +9,7 @@ export default function searchBar() {
             class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
             type="button"
           >
-            Distance (KM){" "}
+            Distance (km){" "}
             <svg
               class="w-2.5 h-2.5 ms-2.5"
               aria-hidden="true"
@@ -39,7 +39,7 @@ export default function searchBar() {
                   type="button"
                   class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Mockups
+                  0km
                 </button>
               </li>
               <li>
@@ -47,7 +47,7 @@ export default function searchBar() {
                   type="button"
                   class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Templates
+                  5km
                 </button>
               </li>
               <li>
@@ -55,7 +55,7 @@ export default function searchBar() {
                   type="button"
                   class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Design
+                  10km 
                 </button>
               </li>
               <li>
@@ -63,7 +63,15 @@ export default function searchBar() {
                   type="button"
                   class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
-                  Logos
+                  15km
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  20km+
                 </button>
               </li>
             </ul>
@@ -72,8 +80,15 @@ export default function searchBar() {
             <input
               type="search"
               id="search-dropdown"
-              class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-              placeholder="Search Mockups, Logos, Design Templates..."
+              class="location block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="Enter your location"
+              required
+            />
+                        <input
+              type="search"
+              id="search-dropdown"
+              class="jsearch block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="Job Name"
               required
             />
             <button

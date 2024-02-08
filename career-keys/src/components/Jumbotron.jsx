@@ -1,7 +1,6 @@
 export default function Jumbotron() {
     return <>
 <header>
-
 {/* Hero section with background image, heading, subheading and button */}
 <div
     className="relative h-96 overflow-hidden bg-cover bg-no-repeat p-12 text-center lg:h-screen"

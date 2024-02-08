@@ -1,11 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-.flex {width: 50%; position: absolute; margin-top: 3%; margin-left: 3%;}
-.location {width: 30%; display:inline-block; color: black !important; background-color:white !important;}
-.jsearch {width: 65%; display:inline-block; color: black !important; background-color:white !important;}
-
-#dropdown-button {color: black !important; background-color:white !important;}
-

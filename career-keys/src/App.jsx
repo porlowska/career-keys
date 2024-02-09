@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
     <Nav/>
-    <Hompage/>
+    <Homepage/>
     <Footer/>
     </>
   )

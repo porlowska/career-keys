@@ -1,4 +1,4 @@
-import {jobs} from './../data/data.json';
+import {jobs} from '../../data/data.json';
 
 export default function JListing() {
 

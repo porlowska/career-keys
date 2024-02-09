@@ -2,7 +2,7 @@
 export default function Footer(){
     return <>
     <footer class="
-    fixed bottom-0 left-0 z-20 w-full border-t border-gray-200 shadow p-6 dark:bg-rose-950 dark:border-gray-600">
+    left-0 z-20 w-full border-t border-gray-200 shadow p-6 dark:bg-rose-950 dark:border-gray-600">
 
     <div class="mx-auto max-w-screen-xl p-4 flex justify-between">
       <span class="text-sm text-rose-950 sm:text-center dark:text-rose-300">© 2024 <a href="#" class="hover:underline">Immaterial™</a>. All Rights Not Reserved.

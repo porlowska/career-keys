@@ -12,7 +12,7 @@ export default function JobDetails () {
             </ul>
             <div id="defaultTabContent">
                 <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Powering innovation & trust at 200,000+ companies worldwide</h2>
+                    <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">About the role</h2>
                     <p className="mb-3 text-gray-500 dark:text-gray-400"></p>
                     <a href="#" className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
                         Learn more

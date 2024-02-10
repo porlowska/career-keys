@@ -1,11 +1,9 @@
-import {jobs} from '../../data/data.json';
-
-export default function JListing() {
+export default function JobListing({jobSearch}) {
 
 return ( 
     <div className='container mb-2'>
     <ul className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-        {jobs.map((job, index) =>{
+        {jobSearch.map((job, index) =>{
         return(
             <li className="pb-3 sm:pb-4">
             <div className="flex items-center space-x-4 rtl:space-x-reverse">

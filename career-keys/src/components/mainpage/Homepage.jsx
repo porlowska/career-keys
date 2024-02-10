@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios'
 import SearchBar from "./SearchBar";
 import Jumbotron from "./Jumbotron";
-import JListing from './JobListing';
+import JobListing from './JobListing';
 
 
 
@@ -34,8 +34,9 @@ export default function Homepage() {
   
     try {
       const response = await axios.get(url, options);
-      console.log(response.data);
-      setJobSearch(response.data)
+      console.log(response.data.data);
+      setJobSearch(response.data.data);
+      console.log(jobSearch);
     } catch (error) {
       console.error(error);
     }
@@ -45,7 +46,7 @@ export default function Homepage() {
     <>
     <Jumbotron/>
     <SearchBar onSearch={handleSearch}/>
-    {/** <JobListing jobSearch={jobSearch}/>*/}
+    <JobListing jobSearch={jobSearch}/>
     
     
     

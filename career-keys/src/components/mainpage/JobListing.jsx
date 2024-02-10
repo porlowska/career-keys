@@ -1,10 +1,19 @@
+import { useState } from 'react';
+import JobDetails from './JobDetails';
+
 export default function JobListing({jobSearch}) {
 
+    const [jDesc, setjDesc]=useState([])
+
 return ( 
+    <>
     <div className='container mb-2'>
     <ul className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
         {jobSearch.map((job, index) =>{
         return(
+            <a href="#description" onClick={(e) => {
+                setjDesc(job);
+            }}>
             <li className="pb-3 sm:pb-4">
             <div className="flex items-center space-x-4 rtl:space-x-reverse">
                 <div className="flex-shrink-0">
@@ -23,9 +32,12 @@ return (
             </div>
             </div>
         </li>
+        </a>
         )
         })}
    </ul>
    </div>
+   <JobDetails job={jDesc}/>
+   </>
 )
 }

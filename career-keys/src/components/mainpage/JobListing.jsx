@@ -7,7 +7,7 @@ export default function JobListing({jobSearch}) {
 
 return ( 
     <>
-    <div className='container mb-2'>
+    <div className='container mb-2 w-2/6 pl-10'>
     <ul className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
         {jobSearch.map((job, index) =>{
         return(

@@ -19,20 +19,21 @@ const handleSubmit = async (e) => {
     return (
     <>
         <form onSubmit={handleSubmit}
-        className="flex flex-col gap-2" id="searchForm">
-            <div className="flex flex-col md:flex-row gap-1 md:gap-3 p-5 justify-center">
+        className="flex flex-col gap-2 py-5" id="searchForm">
+            <div className="flex flex-col md:flex-row gap-1 md:gap-0 justify-center">
 
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-3 border-2 border-rose-200 rounded-lg md:border-r-0 md:rounded-r-none">
                 <input
-                className="rounded col-span-2"
+                className="border-0 col-span-2 placeholder-rose-950 text-rose-950 focus:ring-pink-400 focus:rounded-l-lg pl-3"
                 type="text"
-                placeholder="job title, location"
+                placeholder="Job title & Location"
                 value={title}
                 onChange={(e)=>setTitle(e.target.value)}
                 required
                 />
                 
-                <select onChange={(e)=>setRadius(e.target.value)} name="radius" id="radius" className=" rounded ml-3 px-3 cols-span-1">
+                <select onChange={(e)=>setRadius(e.target.value)} name="radius" id="radius" 
+                className=" border-0 cols-span-1 text-rose-950 focus:ring-pink-400 px-2">
                     <option value=""> Distance </option>
                     <option value="1">Exact location</option>
                     <option value="2">2 km </option>
@@ -50,15 +51,14 @@ const handleSubmit = async (e) => {
 
                 <button 
                 type="submit" 
-                className={`px-4 py-2 rounded-md hover:bg-rose-500 ${
-                    loading ? "bg-gray-400 cursor-not-allowed" : "bg-rose-400 text-rose-950"
-                }`}
-                >
+                className={`px-4 py-2 rounded-lg border-2 border-rose-200 md:border-l-0 md:rounded-l-none hover:bg-rose-400 
+                ${ loading ? "bg-gray-200 cursor-not-allowed" : "bg-rose-200 text-rose-950"}`}>
                 {loading ? "Searching..." : "Find jobs"}</button>
             </div>
 
             <div className="flex flex-wrap md:flex-row gap-3 md:gap-5 justify-center">
-                <select onChange={(e)=>setDatePosted(e.target.value)} name="datePosted" id="datePosted">
+                <select onChange={(e)=>setDatePosted(e.target.value)} name="datePosted" id="datePosted" 
+                className="bg-rose-200 border border-rose-200 text-rose-950 text-sm rounded-lg focus:ring-rose-400 focus:border-rose-400 block py-2 px-4">
                     <option value="">Date Posted</option>
                     <option value="all">All</option>
                     <option value="today">Today</option>
@@ -68,7 +68,8 @@ const handleSubmit = async (e) => {
                 </select>
 
 
-                <select onChange={(e)=>setEmploymentType(e.target.value)} name="employment" id="employment">
+                <select onChange={(e)=>setEmploymentType(e.target.value)} name="employment" id="employment"
+                className="bg-rose-200 border border-rose-200 text-rose-950 text-sm rounded-lg focus:ring-rose-400 focus:border-rose-400 block py-2 px-4">
                     <option value="">Employment Type</option>
                     <option value="FULLTIME"> Full Time </option>
                     <option value="CONTRACTOR">Contractor</option>
@@ -76,10 +77,10 @@ const handleSubmit = async (e) => {
                     <option value="INTERN"> Intern </option>
                 </select>
 
-                <div onChange={(e)=>setTitle(e.target.checked)}
-                className="flex items-center me-4">
-                    <input id="default-checkbox" type="checkbox" value={remote} className="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 "/>
-                    <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium text-gray-900">Remote Jobs Only</label>
+                <div onChange={(e)=>setRemote(e.target.checked)}
+                className="flex items-center me-4  bg-rose-200 border border-rose-200 text-rose-950 text-sm rounded-lg focus:ring-rose-400 focus:border-rose-400 py-2 px-4">
+                    <input id="remote" type="checkbox" value={remote} className="w-4 h-4 text-rose-950 bg-gray-100 border-gray-300 rounded-lg focus:ring-rose-400 "/>
+                    <label htmlFor="remote" className="ms-2 text-sm font-medium text-rose-950">Remote Jobs Only</label>
                 </div>
             </div>
         </form>

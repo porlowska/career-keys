@@ -2,45 +2,7 @@ import OpenAI from "openai";
 import {useState} from 'react';
 
 export default function JobDetails (job) {
-    let text = job.job.job_description
-    const [keywords, setKeywords] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const extractKeywords = async (text) => {
-    setLoading(true);
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${import.meta.env.VITE_LKey}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        prompt:
-          'Extract keywords from this text. Make the first letter of every word uppercase and separate with commas:\n\n' +
-          text +
-          '',
-        temperature: 0.5,
-        max_tokens: 60,
-        top_p: 1.0,
-        frequency_penalty: 0.8,
-        presence_penalty: 0.0,
-      }),
-    };
-    try {
-      const response = await fetch(
-        "https://api.openai.com/v1/completions",
-        options
-      );
-      const json = await response.json();
-      console.log(json.choices[0].text.trim());
-      setKeywords(json.choices[0].text.trim());
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-   console.log(keywords);
+  
 
     return (
         <div id="description" className="w-3/6 inline-block	float-right pr-10">

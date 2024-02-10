@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from "./components/Nav";
-import Homepage from './components/main page/Homepage';
+import Homepage from './components/mainpage/Homepage';
 import Footer from './components/Footer';
 import "./index.css";
 

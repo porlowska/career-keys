@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({onSearch}) {
+    const[title, setTitle]=useState("")
+    const[radius, setRadius]=useState("")
+    const[datePosted, setDatePosted]=useState("")
+    const[employmentType, setEmploymentType]=useState("")
+    const[remote, setRemote]=useState(false)
+
+
+
+
+
+const handleSubmit = (e) => {
+    e.preventDefault()
+    onSearch(title, radius, datePosted, employmentType, remote)
+}
+
     return (
     <>
-        <form className="flex flex-col gap-2" id="searchForm">
+        <form onSubmit={handleSubmit}
+        className="flex flex-col gap-2" id="searchForm">
             <div className="flex flex-col md:flex-row gap-1 md:gap-3 p-5 justify-center">
 
                 <div className="grid grid-cols-3">
@@ -11,12 +27,12 @@ export default function SearchBar() {
                 className="rounded col-span-2"
                 type="text"
                 placeholder="job title, location"
+                value={title}
+                onChange={(e)=>setTitle(e.target.value)}
                 required
                 />
-
-
                 
-                <select name="radius" id="radius" className=" rounded ml-3 px-3 cols-span-1">
+                <select onChange={(e)=>setRadius(e.target.value)} name="radius" id="radius" className=" rounded ml-3 px-3 cols-span-1">
                     <option value=""> Distance </option>
                     <option value="1">Exact location</option>
                     <option value="2">2 km </option>
@@ -39,7 +55,7 @@ export default function SearchBar() {
             </div>
 
             <div className="flex flex-wrap md:flex-row gap-3 md:gap-5 justify-center">
-                <select name="datePosted" id="datePosted">
+                <select onChange={(e)=>setDatePosted(e.target.value)} name="datePosted" id="datePosted">
                     <option value="">Date Posted</option>
                     <option value="all">All</option>
                     <option value="today">Today</option>
@@ -49,7 +65,7 @@ export default function SearchBar() {
                 </select>
 
 
-                <select name="employment" id="employment">
+                <select onChange={(e)=>setEmploymentType(e.target.value)} name="employment" id="employment">
                     <option value="">Employment Type</option>
                     <option value="FULLTIME"> Full Time </option>
                     <option value="CONTRACTOR">Contractor</option>
@@ -57,9 +73,10 @@ export default function SearchBar() {
                     <option value="INTERN"> Intern </option>
                 </select>
 
-                <div className="flex items-center me-4">
-                    <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 "/>
-                    <label for="default-checkbox" className="ms-2 text-sm font-medium text-gray-900">Remote Jobs Only</label>
+                <div onChange={(e)=>setTitle(e.target.checked)}
+                className="flex items-center me-4">
+                    <input id="default-checkbox" type="checkbox" value={remote} className="w-4 h-4 text-yellow-400 bg-gray-100 border-gray-300 rounded focus:ring-yellow-500 dark:focus:ring-yellow-600 "/>
+                    <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium text-gray-900">Remote Jobs Only</label>
                 </div>
             </div>
         </form>

@@ -1,15 +1,15 @@
 
 export default function Footer(){
     return <>
-    <footer class="
+    <footer className="
     left-0 z-20 w-full border-t border-gray-200 shadow p-6 dark:bg-rose-950 dark:border-gray-600">
 
-    <div class="mx-auto max-w-screen-xl p-4 flex justify-between">
-      <span class="text-sm text-rose-950 sm:text-center dark:text-rose-300">© 2024 <a href="#" class="hover:underline">Immaterial™</a>. All Rights Not Reserved.
+    <div className="mx-auto max-w-screen-xl p-4 flex justify-between">
+      <span className="text-sm text-rose-950 sm:text-center dark:text-rose-300">© 2024 <a href="#" className="hover:underline">Immaterial™</a>. All Rights Not Reserved.
     </span>
-    <span class="text-sm text-rose-950 sm:text-center dark:text-rose-300"><a href="https://github.com/porlowska/career-keys/"><svg
+    <span className="text-sm text-rose-950 sm:text-center dark:text-rose-300"><a href="https://github.com/porlowska/career-keys/"><svg
   xmlns="http://www.w3.org/2000/svg"
-  class="h-5 w-5"
+  className="h-5 w-5"
   fill="currentColor"
   viewBox="0 0 24 24">
   <path

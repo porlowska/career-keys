@@ -4,11 +4,7 @@ import JobDetails from './JobDetails';
 
 
 export default function JobListing({jobSearch}) {
-    const [currentPage, setcurrentPage]=useState(1)
-    const itemsPerPage =10;
-    const pageNumber = Math.ceil(jobSearch.length/itemsPerPage)
 
-    const jobsToDisplsy = jobSearch.slice(currentPage*itemsPerPage, (currentPage + 1)*itemsPerPage)
 
 
     const [jDesc, setjDesc]=useState([])
@@ -51,12 +47,6 @@ export default function JobListing({jobSearch}) {
 return ( 
     <>
 
-   {/* <div className='container mb-2 '>
-    <ul className="max-w-lg divide-y divide-rose-950 p-5 ml-10">
-        {jobsToDisplsy.map((job, index) =>{
-        return(
-            <li key={index} className="pb-4"> */}
-
     <div className='container inline-block mb-2 w-2/6 pl-10'>
     <ul className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
         {jobSearch.map((job, index) =>{
@@ -87,14 +77,6 @@ return (
         )
         })}
    </ul>
-   <div className="flex justify-between">
-          <button onClick={prevPage} disabled={currentPage === 0}>
-            Previous
-          </button>
-          <button onClick={nextPage} disabled={currentPage === pageCount - 1}>
-            Next
-          </button>
-        </div>
    </div>
    {/* <JobDetails job={jDesc}/> */}
    </>

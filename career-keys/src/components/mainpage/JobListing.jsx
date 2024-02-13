@@ -85,12 +85,9 @@ return (
         })}
     </ul>
    </div>
-   <JobDetails job={jDesc}/> 
-   </div>
-<<<<<<< HEAD
    {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <p>No details found</p>}
-=======
->>>>>>> 6168d34ac74df40210da0b237806181419f5043e
+   </div>
+   
    </>
 )
 }

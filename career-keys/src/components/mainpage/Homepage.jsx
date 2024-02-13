@@ -4,11 +4,12 @@ import axios from 'axios'
 import SearchBar from "./SearchBar";
 import Jumbotron from "./Jumbotron";
 import JobListing from './JobListing';
-
+import Body from './Body';
 
 
 export default function Homepage() {
   const [jobSearch, setJobSearch]=useState([])
+  const [showJobListing, setShowJobListing]=useState(false)
   
   const handleSearch=async(title, radius, datePosted, employmentType, remote)=>{
     let url = `https://jsearch.p.rapidapi.com/search?query=${title}&page=10&num_pages=10`;
@@ -36,6 +37,7 @@ export default function Homepage() {
       const response = await axios.get(url, options);
       console.log(response.data.data);
       setJobSearch(response.data.data);
+      setShowJobListing(true);
       console.log(jobSearch);
     } catch (error) {
       console.error(error);
@@ -46,10 +48,7 @@ export default function Homepage() {
     <>
     <Jumbotron/>
     <SearchBar onSearch={handleSearch}/>
-    <JobListing jobSearch={jobSearch}/>
-    
-    
-    
+    {showJobListing ? <JobListing jobSearch={jobSearch}/> : <Body/>}
     </>
   )
 }

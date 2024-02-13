@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
         className="flex flex-col gap-2 p-5" id="searchForm">
             <div className="flex flex-col md:flex-row gap-1 md:gap-0 justify-center">
 
-                <div className="grid grid-cols-3 border-2 border-rose-200 rounded-lg md:border-r-0 md:rounded-r-none">
+                <div className="grid grid-cols-3 border-2 border-purple-600 rounded-lg md:border-r-0 md:rounded-r-none">
                 <input
                 className="border-0 col-span-2 placeholder-rose-950 text-rose-950 focus:ring-pink-400 focus:rounded-l-lg pl-3"
                 type="text"
@@ -51,7 +51,7 @@ const handleSubmit = async (e) => {
 
                 <button 
                 type="submit" 
-                className={`px-4 py-2 rounded-lg border-2 border-rose-200 md:border-l-0 md:rounded-l-none hover:bg-rose-400 
+                className={`px-4 py-2 rounded-lg border-2 border-purple-600 md:border-l-0 md:rounded-l-none hover:bg-purple-600 hover:text-white
                 ${ loading ? "bg-gray-200 cursor-not-allowed" : "bg-rose-200 text-rose-950"}`}>
                 {loading ? "Searching..." : "Find jobs"}</button>
             </div>
@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
 
                 <div onChange={(e)=>setRemote(e.target.checked)}
                 className="flex items-center me-4  bg-rose-200 border border-rose-200 text-rose-950 text-sm rounded-lg focus:ring-rose-400 focus:border-rose-400 py-2 px-4">
-                    <input id="remote" type="checkbox" value={remote} className="w-4 h-4 text-rose-950 bg-gray-100 border-gray-300 rounded-lg focus:ring-rose-400 "/>
+                    <input id="remote" type="checkbox" value={remote} className="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded-lg focus:ring-purple-600 "/>
                     <label htmlFor="remote" className="ms-2 text-sm font-medium text-rose-950">Remote Jobs Only</label>
                 </div>
             </div>

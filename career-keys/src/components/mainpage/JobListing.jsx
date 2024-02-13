@@ -40,12 +40,11 @@ export default function JobListing({jobSearch}) {
             import.meta.env.VITE_OpenURL,
             options
           );
-          const keyData = await response.json();
-          let keyString = keyData.choices[0].message.content
+          let keyData = await response.json()
           console.log(keyData);
-          console.log(typeof(keyString));
           console.log(keyData.choices[0].message.content);
-          setKeywords(keyString);
+          setKeywords(keyData.choices[0].message.content);
+          console.log(keywords)
           setshowDetails(true)
         } catch (error) {
           console.error(error);
@@ -85,7 +84,7 @@ return (
         })}
    </ul>
    </div>
-   {showDetails ? <JobDetails job={jDesc} keys={keywords}/>: <p>No details found</p>}
+   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <p>No details found</p>}
    </>
 )
 }

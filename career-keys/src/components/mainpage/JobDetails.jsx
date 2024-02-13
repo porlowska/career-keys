@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import { useState } from "react";
+
+export default function JobDetails({job, words}) {
+=======
 import OpenAI from "openai";
 import {useState} from 'react';
 
@@ -7,6 +12,7 @@ export default function JobDetails (job) {
         <>
         </>
     } else {
+>>>>>>> 6168d34ac74df40210da0b237806181419f5043e
     return (
         <div id="description" className="col-span-1 pr-10">
         <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -19,15 +25,16 @@ export default function JobDetails (job) {
                 </li>
             </ul>
             <div id="defaultTabContent">
-                <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{job.job.job_title}</h2>
-                    <h3 className="mb-3 text-xl font-extrabold tracking-tight text-gray-900 dark:text-white">{job.job.employer_name}</h3>
+                <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="desc-tab">
+                    <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{job.job_title}</h2>
+                    <h3 className="mb-3 text-xl font-extrabold tracking-tight text-gray-900 dark:text-white">{job.employer_name}</h3>
                     <p className="mb-3 text-gray-900 dark:text-white">
-                        {job.job.job_description}
+                        {job.job_description}
                     </p>
                 </div>
-                <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
-                    <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Key Details</h2>
+                <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="key-tab">
+                    <h2 className="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Keywords</h2>
+                    <p>{words}</p>
                     <ul role="list" className="space-y-4 text-gray-500 dark:text-gray-400">
                         <li className="flex space-x-2 rtl:space-x-reverse items-center">
                             <svg className="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -44,7 +51,7 @@ export default function JobDetails (job) {
                     </ul>
                 </div>
             </div>
-        </div>
+    </div> 
     </div>
     )
 }

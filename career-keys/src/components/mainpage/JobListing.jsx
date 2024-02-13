@@ -2,44 +2,54 @@
 import { useState } from 'react';
 import JobDetails from './JobDetails';
 
-
 export default function JobListing({jobSearch}) {
-  const [jDesc, setjDesc]=useState([])
-  const [keywords, setKeywords] = useState([]);
-  const getKeywords = async(text) => {
-        const url = "https://api.openai.com/v1/chat/completions";
+    const [jDesc, setjDesc]=useState([])
+    const [keywords, setKeywords] = useState("");
+    const [showDetails, setshowDetails] = useState(false)
+
+    const extractKeywords = async (text) => {
         const options = {
-            method: 'POST',
-            headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${import.meta.env.VITE_LKey}`, 
-        },
-        body: JSON.stringify({
-            model: "gpt-3.5-turbo",           
-            prompt:
-              'Extract keywords from this text. Make the first letter of every word uppercase and separate with commas:\n\n' +
-              text +'',
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${import.meta.env.VITE_LKey}`,
+          },
+          body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            "messages": [
+                {
+                  "role": "system",
+                  "content": "You will be provided with a job description, and your task is to extract a list of keywords from it. Ignore location names."
+                },
+                {
+                  "role": "user",
+                  "content": text,
+                }
+              ],
+            
             temperature: 0.5,
-            max_tokens: 60,
+            max_tokens: 30,
             top_p: 1.0,
             frequency_penalty: 0.8,
             presence_penalty: 0.0,
           }),
         };
+    
         try {
           const response = await fetch(
-            url,
+            import.meta.env.VITE_OpenURL,
             options
           );
-          const json = await response.json();
-          console.log(json.choices[0].text.trim());
-          setKeywords(json.choices[0].text.trim());
-          setLoading(false);
+          let keyData = await response.json()
+          console.log(keyData);
+          console.log(keyData.choices[0].message.content);
+          setKeywords(keyData.choices[0].message.content);
+          console.log(keywords)
+          setshowDetails(true)
         } catch (error) {
           console.error(error);
         }
-    }
-
+      };
 return ( 
     <>
     <div className='grid grid-cols-2'>
@@ -49,7 +59,8 @@ return (
         return(
             <a href="#description" onClick={(e) => {
                 setjDesc(job);
-                getKeywords(job.job_description);
+                extractKeywords(job.job_description)
+                
             }}>
             <li className="pb-3 sm:pb-4" key={index}>
               <div className="flex items-center space-x-4 rtl:space-x-reverse">
@@ -76,6 +87,11 @@ return (
    </div>
    <JobDetails job={jDesc}/> 
    </div>
+<<<<<<< HEAD
+   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <p>No details found</p>}
+=======
+>>>>>>> 6168d34ac74df40210da0b237806181419f5043e
    </>
 )
 }
+

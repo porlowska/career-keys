@@ -73,7 +73,7 @@ return (
         })}
    </ul>
    </div>
-   <JobDetails job={jDesc}/>
+   {/* <JobDetails job={jDesc}/> */}
    </>
 )
 }

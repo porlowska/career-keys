@@ -2,7 +2,11 @@ import OpenAI from "openai";
 import {useState} from 'react';
 
 export default function JobDetails (job) {
-
+    if (job == null) {
+        return
+        <>
+        </>
+    } else {
     return (
         <div id="description" className="w-3/6 inline-block	float-right pr-10">
         <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -43,6 +47,7 @@ export default function JobDetails (job) {
         </div>
     </div>
     )
+}
 }
 
 

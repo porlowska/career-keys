@@ -2,9 +2,55 @@
 import { useState } from 'react';
 import JobDetails from './JobDetails';
 
-
 export default function JobListing({jobSearch}) {
+    const [jDesc, setjDesc]=useState([])
+    const [keywords, setKeywords] = useState("");
+    const [showDetails, setshowDetails] = useState(false)
 
+    const extractKeywords = async (text) => {
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${import.meta.env.VITE_LKey}`,
+          },
+          body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            "messages": [
+                {
+                  "role": "system",
+                  "content": "You will be provided with a job description, and your task is to extract a list of keywords from it. Ignore location names."
+                },
+                {
+                  "role": "user",
+                  "content": text,
+                }
+              ],
+            
+            temperature: 0.5,
+            max_tokens: 30,
+            top_p: 1.0,
+            frequency_penalty: 0.8,
+            presence_penalty: 0.0,
+          }),
+        };
+    
+        try {
+          const response = await fetch(
+            import.meta.env.VITE_OpenURL,
+            options
+          );
+          const keyData = await response.json();
+          let keyString = keyData.choices[0].message.content
+          console.log(keyData);
+          console.log(typeof(keyString));
+          console.log(keyData.choices[0].message.content);
+          setKeywords(keyString);
+          setshowDetails(true)
+        } catch (error) {
+          console.error(error);
+        }
+      };
 return ( 
     <>
     <div className='mb-2  p-5 w-full md:w-6/12 m-2 '>
@@ -13,7 +59,8 @@ return (
         return(
             <a href="#description" onClick={(e) => {
                 setjDesc(job);
-                getKeywords(job.job_description);
+                extractKeywords(job.job_description)
+                
             }}>
             <li className="pb-3 sm:pb-4" key={index}>
            <div className="flex items-center space-x-4 rtl:space-x-reverse">
@@ -38,7 +85,8 @@ return (
         })}
    </ul>
    </div>
-   {/* <JobDetails job={jDesc}/> */}
+   {showDetails ? <JobDetails job={jDesc} keys={keywords}/>: <p>No details found</p>}
    </>
 )
 }
+

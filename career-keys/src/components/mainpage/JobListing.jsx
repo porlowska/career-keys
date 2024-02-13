@@ -1,24 +1,35 @@
+import { useState } from "react"
+
+
+
 export default function JobListing({jobSearch}) {
+    const [currentPage, setcurrentPage]=useState(1)
+    const itemsPerPage =10;
+    const pageNumber = Math.ceil(jobSearch.length/itemsPerPage)
+
+    const jobsToDisplsy = jobSearch.slice(currentPage*itemsPerPage, (currentPage + 1)*itemsPerPage)
+
 
 return ( 
-    <div className='container mb-2'>
-    <ul className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-        {jobSearch.map((job, index) =>{
+    <>
+    <div className='container mb-2 '>
+    <ul className="max-w-lg divide-y divide-rose-950 p-5 ml-10">
+        {jobsToDisplsy.map((job, index) =>{
         return(
-            <li className="pb-3 sm:pb-4">
+            <li key={index} className="pb-4">
             <div className="flex items-center space-x-4 rtl:space-x-reverse">
                 <div className="flex-shrink-0">
-                    <img className="w-8 h-8 rounded-full" src={job.employer_logo}/>
+                    <img className="w-9 h-9 m-2 rounded-full" src={job.employer_logo} alt={job.employer_name}/>
                 </div>
                 <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 truncate dark:text-black">
+                <p className="text-lg font-bold text-rose-950 truncate ">
                 {job.job_title}
                 </p>
-                <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                <p className="text-sm text-gray-500 truncate ">
                 {job.employer_name}
                 </p>
             </div>
-            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-black">
+            <div className="inline-flex items-center text-base font-medium text-rose-300 ">
              {job.job_city} {job.job_country}
             </div>
             </div>
@@ -26,6 +37,15 @@ return (
         )
         })}
    </ul>
+   <div className="flex justify-between">
+          <button onClick={prevPage} disabled={currentPage === 0}>
+            Previous
+          </button>
+          <button onClick={nextPage} disabled={currentPage === pageCount - 1}>
+            Next
+          </button>
+        </div>
    </div>
+   </>
 )
 }

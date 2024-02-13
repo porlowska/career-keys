@@ -19,7 +19,7 @@ const handleSubmit = async (e) => {
     return (
     <>
         <form onSubmit={handleSubmit}
-        className="flex flex-col gap-2 py-5" id="searchForm">
+        className="flex flex-col gap-2 p-5" id="searchForm">
             <div className="flex flex-col md:flex-row gap-1 md:gap-0 justify-center">
 
                 <div className="grid grid-cols-3 border-2 border-rose-200 rounded-lg md:border-r-0 md:rounded-r-none">

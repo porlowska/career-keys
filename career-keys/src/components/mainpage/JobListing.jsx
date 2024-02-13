@@ -42,7 +42,8 @@ export default function JobListing({jobSearch}) {
 
 return ( 
     <>
-    <div className='mb-2  p-5 w-full md:w-6/12 m-2 '>
+    <div className='grid grid-cols-2'>
+    <div className='mb-2 p-5 w-full m-2 col-span-1'>
     <ul className=" max-h-[500px] overflow-y-auto max-w-md divide-y divide-gray-200 dark:divide-gray-700">
         {jobSearch.map((job, index) =>{
         return(
@@ -51,7 +52,7 @@ return (
                 getKeywords(job.job_description);
             }}>
             <li className="pb-3 sm:pb-4" key={index}>
-           <div className="flex items-center space-x-4 rtl:space-x-reverse">
+              <div className="flex items-center space-x-4 rtl:space-x-reverse">
                 <div className="flex-shrink-0">
                     <img className="w-9 h-9 m-2 rounded-full" src={job.employer_logo} alt={job.employer_name}/>
                 </div>
@@ -71,9 +72,10 @@ return (
         </a>
         )
         })}
-   </ul>
+    </ul>
    </div>
    <JobDetails job={jDesc}/> 
+   </div>
    </>
 )
 }

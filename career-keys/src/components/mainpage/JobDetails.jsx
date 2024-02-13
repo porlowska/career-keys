@@ -8,7 +8,7 @@ export default function JobDetails (job) {
         </>
     } else {
     return (
-        <div id="description" className="w-3/6 inline-block	float-right pr-10">
+        <div id="description" className="col-span-1 pr-10">
         <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
                 <li className="me-2">
@@ -49,6 +49,3 @@ export default function JobDetails (job) {
     )
 }
 }
-
-
-  

@@ -4,7 +4,7 @@ import axios from 'axios'
 import SearchBar from "./SearchBar";
 import Jumbotron from "./Jumbotron";
 import JobListing from './JobListing';
-
+import Body from './Body';
 
 
 export default function Homepage() {
@@ -46,6 +46,7 @@ export default function Homepage() {
     <>
     <Jumbotron/>
     <SearchBar onSearch={handleSearch}/>
+    <Body/>
     <JobListing jobSearch={jobSearch}/>
     
     

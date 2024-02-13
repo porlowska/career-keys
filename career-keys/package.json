@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.1",
     "axios": "^1.6.7",
     "fetch": "^1.1.0",
     "flowbite": "^2.2.1",

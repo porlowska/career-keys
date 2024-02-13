@@ -28,7 +28,7 @@ export default function Homepage() {
     console.log(url)
     const options = {
       headers: {
-        'X-RapidAPI-Key': import.meta.env.VITE_jKey,
+        'X-RapidAPI-Key': import.meta.env.VITE_jKey_PH,
         'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
       }
     };

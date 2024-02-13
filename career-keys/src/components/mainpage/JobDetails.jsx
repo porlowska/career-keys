@@ -49,6 +49,3 @@ export default function JobDetails (job) {
     )
 }
 }
-
-
-  

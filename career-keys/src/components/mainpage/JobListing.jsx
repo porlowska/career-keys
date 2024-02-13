@@ -52,7 +52,7 @@ return (
                 getKeywords(job.job_description);
             }}>
             <li className="pb-3 sm:pb-4" key={index}>
-           <div className="flex items-center space-x-4 rtl:space-x-reverse">
+              <div className="flex items-center space-x-4 rtl:space-x-reverse">
                 <div className="flex-shrink-0">
                     <img className="w-9 h-9 m-2 rounded-full" src={job.employer_logo} alt={job.employer_name}/>
                 </div>
@@ -72,7 +72,7 @@ return (
         </a>
         )
         })}
-   </ul>
+    </ul>
    </div>
    <JobDetails job={jDesc}/> 
    </div>

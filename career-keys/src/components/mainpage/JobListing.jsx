@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import JobDetails from './JobDetails';
-import './../../index.css'
 
 export default function JobListing({jobSearch}) {
     const [jDesc, setjDesc]=useState([])
@@ -19,7 +18,7 @@ export default function JobListing({jobSearch}) {
             "messages": [
                 {
                   "role": "system",
-                  "content": "You will be provided with a job description, and your task is to extract a list of keywords from it. Focus on the keywords a person should add to their cover letter to get the job - skills and experience needed. Do not include the job location (city or country name). Do not include the following words: 'hiring', 'vacancy', 'and', 'the'"
+                  "content": "Identify the keywords of this job description. Provide keywords that a job-seeker can add to their cover letter. Include only personal attributes and skills. Do not include employment type. Ignore location names."
                 },
                 {
                   "role": "user",
@@ -29,7 +28,7 @@ export default function JobListing({jobSearch}) {
             
             temperature: 0.5,
             max_tokens: 30,
-            top_p: 1.0,
+            top_p: 0.9,
             frequency_penalty: 0.8,
             presence_penalty: 0.0,
           }),

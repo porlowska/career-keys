@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import JobDetails from './JobDetails';
-import './../../index.css'
 
 export default function JobListing({jobSearch}) {
     const [jDesc, setjDesc]=useState([])
@@ -19,7 +18,7 @@ export default function JobListing({jobSearch}) {
             "messages": [
                 {
                   "role": "system",
-                  "content": "You will be provided with a job description, and your task is to extract a list of keywords from it. Ignore location names."
+                  "content": "Identify the keywords of this job description. Provide keywords that a job-seeker can add to their cover letter. Include only personal attributes and skills. Do not include employment type. Ignore location names."
                 },
                 {
                   "role": "user",
@@ -29,7 +28,7 @@ export default function JobListing({jobSearch}) {
             
             temperature: 0.5,
             max_tokens: 30,
-            top_p: 1.0,
+            top_p: 0.9,
             frequency_penalty: 0.8,
             presence_penalty: 0.0,
           }),
@@ -52,9 +51,9 @@ export default function JobListing({jobSearch}) {
       };
 return ( 
     <>
-    <div className='grid grid-cols-2'>
-    <div className='mb-2 p-5 w-full m-2 col-span-1'>
-    <ul className=" max-h-[500px] overflow-y-auto max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+    <div className='md:grid md:grid-cols-2'>
+    <div className='mb-2 p-5 w-full m-2 md:col-span-1'>
+    <ul className="max-h-[350px] md:max-h-[700px] overflow-y-auto max-w-md divide-y divide-gray-200 dark:divide-gray-700">
         {jobSearch.map((job, index) =>{
         return(
             <a href="#description" onClick={(e) => {
@@ -85,7 +84,7 @@ return (
         })}
     </ul>
    </div>
-   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <p>No details found</p>}
+   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <div></div>}
    </div>
    
    </>

@@ -3,6 +3,7 @@ import {Tabs, Button} from "flowbite-react";
 
 export default function JobDetails ({job, words}) {
     return (
+        <div className="md:col-span-1">
         <Tabs aria-label="Tabs with underline" style="underline" className="bg-rose-200 text-rose-950 border-rose-400 px-5 m-3 rounded-lg ">
         <Tabs.Item active title="Description" className="bg-rose-200" > 
           <h2>{job.job_title}</h2>
@@ -16,5 +17,5 @@ export default function JobDetails ({job, words}) {
         </Tabs.Item>
 
       </Tabs>
-        
+      </div>
     )}

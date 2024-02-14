@@ -51,9 +51,9 @@ export default function JobListing({jobSearch}) {
       };
 return ( 
     <>
-    <div className='grid grid-cols-2'>
-    <div className='mb-2 p-5 w-full m-2 col-span-1'>
-    <ul className=" max-h-[700px] overflow-y-auto max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+    <div className='md:grid md:grid-cols-2'>
+    <div className='mb-2 p-5 w-full m-2 md:col-span-1'>
+    <ul className="max-h-[350px] md:max-h-[700px] overflow-y-auto max-w-md divide-y divide-gray-200 dark:divide-gray-700">
         {jobSearch.map((job, index) =>{
         return(
             <a href="#description" onClick={(e) => {
@@ -84,7 +84,7 @@ return (
         })}
     </ul>
    </div>
-   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <p>No details found</p>}
+   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <div></div>}
    </div>
    
    </>

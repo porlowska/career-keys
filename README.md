@@ -36,7 +36,7 @@ URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 2. Explore job listings & extracted keywords
 3. Utilize the various features to enhance your job search process.
 
-## Dependencies
+## List Of Dependencies
 
 - React: A JavaScript library for building user interfaces, used to create a dynamic single-page application with an engaging and polished UI.
 - JSearch API: A job search and listings API used for retrieving job data, integrating it into the application to provide users with up-to-date job listings.

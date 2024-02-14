@@ -35,10 +35,8 @@ export default function Homepage() {
   
     try {
       const response = await axios.get(url, options);
-      console.log(response.data.data);
       setJobSearch(response.data.data);
       setShowJobListing(true);
-      console.log(jobSearch);
     } catch (error) {
       console.error(error);
     }

@@ -1,5 +1,3 @@
-import OpenAI from "openai";
-import {useState} from 'react';
 
 export default function JobDetails ({job, words}) {
     return (

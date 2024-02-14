@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import JobDetails from './JobDetails';
+import './../../index.css'
 
 export default function JobListing({jobSearch}) {
     const [jDesc, setjDesc]=useState([])

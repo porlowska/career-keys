@@ -26,15 +26,13 @@ URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 
 - Keyword Extraction from Job Descriptions:The application uses a keyword extraction library to highlight important skills and requirements from job descriptions.
 
-- Personalized Job Alerts: Users can subscribe to receive updates via email or SMS when new jobs matching their criteria are posted.
-
 - Responsive and Accessible UI: The application’s front end is responsive and meets accessibility standards.
 
 
 ## How to Use
 
 1. Open URL of deployed app:  https://github.com/porlowska/REPLACE HERE
-2. Explore job listings, extracted keywords, and personalized job alerts.
+2. Explore job listings & extracted keywords
 3. Utilize the various features to enhance your job search process.
 
 ## Screenshot

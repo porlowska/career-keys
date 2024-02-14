@@ -9,7 +9,7 @@ Career Keys for Job Applications
 - [List of Dependencies](#list-of-dependencies)
 - [Technologies Used](#technologies-used)
 - [API Documentation](#api-documentation)
-- [Screenshots](#screenshots)
+- [Screenshot](#screenshot)
 - [License](#license)
 - [Badges](#badges)
 

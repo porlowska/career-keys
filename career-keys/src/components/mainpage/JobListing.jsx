@@ -19,7 +19,7 @@ export default function JobListing({jobSearch}) {
             "messages": [
                 {
                   "role": "system",
-                  "content": "You will be provided with a job description, and your task is to extract a list of keywords from it. Ignore location names."
+                  "content": "You will be provided with a job description, and your task is to extract a list of keywords from it. Focus on the keywords a person should add to their cover letter to get the job - skills and experience needed. Do not include the job location (city or country name). Do not include the following words: 'hiring', 'vacancy', 'and', 'the'"
                 },
                 {
                   "role": "user",

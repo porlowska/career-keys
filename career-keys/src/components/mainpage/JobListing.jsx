@@ -84,7 +84,7 @@ return (
         })}
     </ul>
    </div>
-   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: <div></div>}
+   {showDetails ? <JobDetails job={jDesc} words={keywords}/>: null}
    </div>
    
    </>

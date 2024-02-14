@@ -7,8 +7,6 @@ Career Keys for Job Applications
 - [Features](#features)
 - [How to Use](#how-to-use)
 - [Screenshots](#screenshots)
-- [Tests](#tests)
-- [Questions](#questions)
 - [License](#license)
 - [Badges](#badges)
 
@@ -38,17 +36,6 @@ URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 ## Screenshot
 
 ![Career Keys Screenshot](./assets/career-keys-screenshot.png)
-
-## Tests
-To test the application, run:
-   ```bash
-npm test
-```
-
-## Questions
-For any questions or feedback, please contact me the project owner:
-GitHub: porlowska
-Email: PUT EMAIL HERE
 
 ## License
 

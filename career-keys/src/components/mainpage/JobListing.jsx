@@ -40,10 +40,7 @@ export default function JobListing({jobSearch}) {
             options
           );
           let keyData = await response.json()
-          console.log(keyData);
-          console.log(keyData.choices[0].message.content);
           setKeywords(keyData.choices[0].message.content);
-          console.log(keywords)
           setshowDetails(true)
         } catch (error) {
           console.error(error);

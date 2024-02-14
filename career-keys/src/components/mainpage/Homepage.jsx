@@ -25,7 +25,6 @@ export default function Homepage() {
     if(remote){
       url += `&remote_jobs_only=true`
     }
-    console.log(url)
     const options = {
       headers: {
         'X-RapidAPI-Key': import.meta.env.VITE_jKey_PH,

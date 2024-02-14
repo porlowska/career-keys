@@ -1,5 +1,5 @@
 # career-keys
-Keyword Enhancer for Job Applications
+Career Keys for Job Applications
 
 ## Table of Contents
 
@@ -7,7 +7,6 @@ Keyword Enhancer for Job Applications
 - [Features](#features)
 - [How to Use](#how-to-use)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
@@ -15,11 +14,11 @@ Keyword Enhancer for Job Applications
 
 ## Full Description
 
-JobBoard Explorer is a cutting-edge, user-centric single-page application (SPA) designed to streamline the job search process. Utilizing React and Node.js, this platform aggregates job listings from multiple job boards, provides advanced keyword extraction from job descriptions, and offers personalized job alerts. Its responsive design and intuitive interface aim to enhance the job search experience, making it easier for users to find relevant job opportunities.
+Career Keys is an innovative, user-focused single-page application designed to optimize the job application process. Built with React and Node.js, this platform enhances job applications by extracting relevant keywords from job descriptions. Its responsive design and user-friendly interface aim to simplify the job search and application process, empowering users to tailor their resumes with keywords that match job requirements.
 
-User Story: As a job seeker, I need a centralized platform to access job listings from various sources, extract key skills and requirements from job descriptions, receive personalized notifications for relevant opportunities, and access a smooth and accessible interface across all devices to streamline my job search process and maximize efficiency.
+User Story: As a job seeker, I need a centralized platform to access job listings from various sources, extract key skills & requirements from job descriptions and access a smooth user friendly interface across all devices to streamline my job search process maximising efficiency.
 
-URL of deployed app:  https://github.com/porlowska/career-keyword-finder.git
+URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 
 ## Features
 
@@ -34,16 +33,13 @@ URL of deployed app:  https://github.com/porlowska/career-keyword-finder.git
 
 ## How to Use
 
-1. Open URL of deployed app:  https://github.com/porlowska/career-keyword-finder.git
+1. Open URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 2. Explore job listings, extracted keywords, and personalized job alerts.
 3. Utilize the various features to enhance your job search process.
 
 ## Screenshot
 
 ![Career Keys Screenshot](./assets/career-keys-screenshot.png)
-
-## Contributing
-N/A??
 
 ## Tests
 To test the application, run:

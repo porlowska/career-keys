@@ -12,7 +12,7 @@ export default function Homepage() {
   //create useStates so that JobSearch and Listing can be dynamically updated based on user search
   const [jobSearch, setJobSearch]=useState([])
   const [showJobListing, setShowJobListing]=useState(false)
-  const [errorMsg, setErrorMsg] = useState('');
+  
   
   const handleSearch=async(title, radius, datePosted, employmentType, remote)=>{
     let url = `https://jsearch.p.rapidapi.com/search?query=${title}&page=10&num_pages=10`;
@@ -38,6 +38,7 @@ export default function Homepage() {
     //API Call, the useStates are updated here using a promissory event
     try {
       const response = await axios.get(url, options);
+
         //If search is not completed it will display error messsage 
         if (response.data.data.length === 0) {
           setJobSearch([]);
@@ -50,13 +51,13 @@ export default function Homepage() {
         }
     } catch (error) {
       console.error(error);
-      setErrorMsg('Please check your internet connection.');
     }
   }
   // React elements rendered here in the return statement
   return (
     <>
     <Jumbotron/>
+
     <SearchBar onSearch={handleSearch} errorMessage={errorMsg}/>
     {showJobListing ? <JobListing jobSearch={jobSearch}/> : <Body/>} {/* Conditional to show the JobListing only once response is received from API, otherwise the 'Body' component with features will continue to display*/}
     </>

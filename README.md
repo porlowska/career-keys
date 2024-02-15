@@ -9,7 +9,7 @@ Career Keys for Job Applications
 - [List of Dependencies](#list-of-dependencies)
 - [Technologies Used](#technologies-used)
 - [API Documentation](#api-documentation)
-- [Screenshot](#screenshot)
+- [Screenshots](#screenshots)
 - [License](#license)
 - [Badges](#badges)
 
@@ -19,7 +19,7 @@ Career Keys is an innovative, user-focused single-page application designed to o
 
 User Story: As a job seeker, I need a centralized platform to access job listings from various sources, extract key skills & requirements from job descriptions and access a smooth user friendly interface across all devices to streamline my job search process maximising efficiency.
 
-URL of deployed app:  https://github.com/porlowska/REPLACE HERE
+URL of deployed app:  [Deployed URL](https://career-keys.netlify.app/)
 
 ## Features
 
@@ -32,7 +32,7 @@ URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 
 ## How to Use
 
-1. Open URL of deployed app:  https://github.com/porlowska/REPLACE HERE
+1. Open URL of deployed app:  [Deployed URL](https://career-keys.netlify.app/)
 2. Explore job listings & extracted keywords
 3. Utilize the various features to enhance your job search process.
 
@@ -54,7 +54,7 @@ URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 
 ### JSearch API
 
-- **Endpoint:** https://api.jsearch.io/
+- **Endpoint:** [JSearch API] (https://api.jsearch.io/)
 - **Description:** JSearch API provides access to a vast database of job listings, enabling users to search for relevant job opportunities based on various criteria.
 - **Authentication:** API key authentication is required for accessing the API endpoints. Obtain an API key by signing up for a developer account on the JSearch website.
 - **Endpoints:**
@@ -73,9 +73,12 @@ URL of deployed app:  https://github.com/porlowska/REPLACE HERE
 - **Usage:** Use the provided SDK or make HTTP requests to OpenAI's API endpoints, passing text data to perform keyword extraction tasks.
 - **Documentation:** For detailed documentation, API usage guidelines, and examples, refer to the OpenAI API documentation available on the official website.
 
-## Screenshot
+## Screenshots
 
-![Career Keys Screenshot](./assets/career-keys-screenshot.png)
+![Career Keys Screenshot Landing Page](public/screenshots/landing_page.png)
+![Career Keys Screenshot Search](public/screenshots/search.png)
+![Career Keys Screenshot Keywords](public/screenshots/keywords.png)
+![Career Keys Screenshot Mobile Version](public/screenshots/mobile_version.png)
 
 ## License
 

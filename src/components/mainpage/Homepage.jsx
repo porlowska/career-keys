@@ -38,8 +38,17 @@ export default function Homepage() {
     //API Call, the useStates are updated here using a promissory event
     try {
       const response = await axios.get(url, options);
-      setJobSearch(response.data.data);
-      setShowJobListing(true);
+
+        //If search is not completed it will display error messsage 
+        if (response.data.data.length === 0) {
+          setJobSearch([]);
+          setShowJobListing(false);
+          setErrorMsg('Please rephrase your search!');
+        } else {
+          setJobSearch(response.data.data);
+          setShowJobListing(true);
+          setErrorMsg('');
+        }
     } catch (error) {
       console.error(error);
     }
@@ -48,7 +57,8 @@ export default function Homepage() {
   return (
     <>
     <Jumbotron/>
-    <SearchBar onSearch={handleSearch}/>
+
+    <SearchBar onSearch={handleSearch} errorMessage={errorMsg}/>
     {showJobListing ? <JobListing jobSearch={jobSearch}/> : <Body/>} {/* Conditional to show the JobListing only once response is received from API, otherwise the 'Body' component with features will continue to display*/}
     </>
   )

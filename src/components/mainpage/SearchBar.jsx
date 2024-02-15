@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Tooltip, Button } from 'flowbite-react';
 
 {/*SearchBar function handles setting useStates for 'loading' feedback as well as user input */}
-export default function SearchBar({onSearch}) {
+export default function SearchBar({onSearch, errorMessage}) {
     const[title, setTitle]=useState("")
     const[radius, setRadius]=useState("")
     const[datePosted, setDatePosted]=useState("")
     const[employmentType, setEmploymentType]=useState("")
     const[remote, setRemote]=useState(false)
     const [loading, setLoading] = useState(false);
-
+    const [showError, setShowError]=useState(false)
 
 const handleSubmit = async (e) => {
     e.preventDefault()
@@ -16,17 +17,29 @@ const handleSubmit = async (e) => {
     await onSearch(title, radius, datePosted, employmentType, remote)
     setLoading(false);
 }
+    //to display error messag for 6 second only 
+useEffect(()=>{
+    let timer;
+    if(errorMessage){
+        setShowError(true)
+        timer = setTimeout(()=>{setShowError(false)},6000)
+    }
+    return ()=>clearTimeout(timer)
+}, 
+[errorMessage]) //this depend on error message
 
     return (
     <>
         <form onSubmit={handleSubmit}
         className="flex flex-col gap-2 p-5" id="searchForm">
-            <div className="flex flex-col md:flex-row gap-1 md:gap-0 justify-center">
+            <div className=" relative flex flex-col md:flex-row gap-1 md:gap-0 justify-center">
 
                 {/* Input text field*/}
                 <div className="grid grid-cols-3 border-2 border-purple-600 rounded-lg md:border-r-0 md:rounded-r-none">
+                {/* Error message will be displayed here when showError is TRUE*/}
+                {showError &&(<div className="absolute -top-10 border-2 border-red-500 bg-red-300 text-red-800 p-2 rounded-lg text-xs "> {errorMessage} </div>)}
                 <input
-                className="border-0 col-span-2 placeholder-rose-950 text-rose-950 focus:ring-pink-400 focus:rounded-l-lg pl-3"
+                className="border-0 col-span-2 placeholder-rose-950 text-rose-950 focus:ring-pink-400  rounded-lg focus:rounded-l-lg pl-3"
                 type="text"
                 placeholder="Job title & Location"
                 value={title}
@@ -57,7 +70,8 @@ const handleSubmit = async (e) => {
                 type="submit" 
                 className={`px-4 py-2 rounded-lg border-2 border-purple-600 md:border-l-0 md:rounded-l-none hover:bg-purple-600 hover:text-white
                 ${ loading ? "bg-gray-200 cursor-not-allowed" : "bg-rose-200 text-rose-950"}`}>
-                {loading ? "Searching..." : "Find jobs"}</button>
+                {loading ? "Searching..." : "Find jobs"}
+                </button>
             </div>
             
             {/* Options for how old the job results can be*/}

@@ -9,7 +9,7 @@ export default function ErrorMsg({errorMessage}){
         <Modal show={openMsg} size="sm" >
         <Modal.Header/>
         <Modal.Body>
-            <div className="text-lg"></div> {errorMessage}
+            <div className="text-lg bg-red-500"></div> {errorMessage}
         </Modal.Body> 
         <Modal.Footer>
             <Button onClick={setOpenMsg(false)} className='text-sm'>Close</Button>

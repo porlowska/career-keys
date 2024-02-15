@@ -12,6 +12,7 @@ export default function Homepage() {
   //create useStates so that JobSearch and Listing can be dynamically updated based on user search
   const [jobSearch, setJobSearch]=useState([])
   const [showJobListing, setShowJobListing]=useState(false)
+  const [errorMsg ,setErrorMsg] = useState('')
   
   
   const handleSearch=async(title, radius, datePosted, employmentType, remote)=>{

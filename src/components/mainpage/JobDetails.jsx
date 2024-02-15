@@ -9,7 +9,7 @@ export default function JobDetails ({job, words}) {
           <h2>{job.job_title}</h2>
           <h3>{job.employer_name}</h3>
           <a href={job.job_apply_link} target="_blank">
-          <Button pill className="bg-rose-700 m-5">Job Link</Button></a>
+          <Button pill className="bg-purple-600 m-5">Job Link</Button></a>
           <p className="max-h-[400px] overflow-y-auto">{job.job_description}</p>
         </Tabs.Item>
         <Tabs.Item title="Keywords" className="p-3" >

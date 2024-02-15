@@ -27,7 +27,7 @@ export default function Homepage() {
     }
     const options = {
       headers: {
-        'X-RapidAPI-Key': import.meta.env.VITE_jKey_PH,
+        'X-RapidAPI-Key': import.meta.env.VITE_jKey_PO,
         'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
       }
     };

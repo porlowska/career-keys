@@ -6,7 +6,7 @@ import {Tabs, Button} from "flowbite-react";
 export default function JobDetails ({job, words}) {
     return (
         <div className="md:col-span-1"> {/*Column style to make the component display next to JobListing on md screen*/}
-        <Tabs aria-label="Tabs with underline" style="underline" className="bg-rose-200 text-rose-950 border-rose-400 px-3 m-3 rounded-lg ">
+        <Tabs aria-label="Tabs with underline" style="underline" className="bg-rose-200 text-rose-950 border-rose-400 md:px-8 sm:px-0 m-3 rounded-lg ">
           <Tabs.Item active title="Description" className="bg-rose-200" > 
             <h2>{job.job_title}</h2> {/*selects path from json object from JSearch API call */}
             <h3>{job.employer_name}</h3>

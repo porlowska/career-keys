@@ -50,7 +50,7 @@ return (
     <>
     <div className='md:grid md:grid-cols-2'>
     <div className='mb-2 p-5 w-full m-2 md:col-span-1'>
-    <ul className="max-h-[350px] md:max-h-[700px] overflow-y-auto max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+    <ul className="max-h-[350px] md:max-h-[700px] overflow-y-auto divide-y divide-gray-200">
         {jobSearch.map((job, index) =>{
         return(
             <a href="#description" onClick={(e) => {

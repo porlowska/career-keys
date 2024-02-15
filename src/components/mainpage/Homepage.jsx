@@ -5,7 +5,6 @@ import SearchBar from "./SearchBar";
 import Jumbotron from "./Jumbotron";
 import JobListing from './JobListing';
 import Body from './Body';
-import ErrorMsg from './ErrorM';
 
 
 

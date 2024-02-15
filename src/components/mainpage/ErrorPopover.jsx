@@ -1,19 +1,20 @@
-import { Popover } from 'flowbite';
+import { Button, Modal, ModalBody } from 'flowbite-react';
+import { useState } from 'react';
 
-export default function ErrorPopover({errorMessage}){
+export default function ErrorMsg({errorMessage}){
+     const [openMsg, setOpenMsg] = useState(false);
+     errorMessage !== '' ? setOpenMsg(true) : setOpenMsg(false)
     return (
-        <Popover 
-          show={errorMessage !== '' ? true : false}
-          content={
-            <div className="w-64 text-md text-gray-500 border-2 border-red-600">
-              <div className=" bg-red-400 px-3 py-2">
-                <h3 className="font-semibold text-gray-900">{errorMessage}</h3>
-              </div>
-            </div>
-          }
-        >
-          <span></span>
-        </Popover>
-        
+        <>
+        <Modal show={openMsg} size="sm" >
+        <Modal.Header/>
+        <Modal.Body>
+            <div className="text-lg"></div> {errorMessage}
+        </Modal.Body> 
+        <Modal.Footer>
+            <Button onClick={setOpenMsg(false)} className='text-sm'>Close</Button>
+        </Modal.Footer>
+        </Modal>
+        </>
     )
 }

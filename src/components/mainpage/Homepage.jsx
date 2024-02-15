@@ -8,11 +8,13 @@ import Body from './Body';
 
 
 export default function Homepage() {
+  {/*create useStates so that JobSearch and Listing can be dynamically updated based on user search*/}
   const [jobSearch, setJobSearch]=useState([])
   const [showJobListing, setShowJobListing]=useState(false)
   
   const handleSearch=async(title, radius, datePosted, employmentType, remote)=>{
     let url = `https://jsearch.p.rapidapi.com/search?query=${title}&page=10&num_pages=10`;
+    {/*If statements below set the query terms for JSearch API call */}
     if(radius!==""){
       url += `&radius=${radius}`
     }
@@ -31,7 +33,7 @@ export default function Homepage() {
         'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
       }
     };
-  
+    {/* API Call, the useStates are updated here using a promissory event*/}
     try {
       const response = await axios.get(url, options);
       setJobSearch(response.data.data);
@@ -40,12 +42,12 @@ export default function Homepage() {
       console.error(error);
     }
   }
-
+  {/* React elements rendered here in the return statement*/}
   return (
     <>
     <Jumbotron/>
     <SearchBar onSearch={handleSearch}/>
-    {showJobListing ? <JobListing jobSearch={jobSearch}/> : <Body/>}
+    {showJobListing ? <JobListing jobSearch={jobSearch}/> : <Body/>} {/* Conditional to show the JobListing only once response is received from API, otherwise the 'Body' component with features will continue to display*/}
     </>
   )
 }

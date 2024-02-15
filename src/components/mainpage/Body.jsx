@@ -1,5 +1,5 @@
 import { BarsArrowUpIcon, CheckBadgeIcon, ArrowPathIcon, CursorArrowRaysIcon } from '@heroicons/react/24/outline'
-
+{/* Features object to hold the features displayed when a user hasn't searched anything yet */}
 const features = [
   {
     name: 'Keyword Extraction',

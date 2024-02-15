@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+{/*SearchBar function handles setting useStates for 'loading' feedback as well as user input */}
 export default function SearchBar({onSearch}) {
     const[title, setTitle]=useState("")
     const[radius, setRadius]=useState("")
@@ -22,6 +23,7 @@ const handleSubmit = async (e) => {
         className="flex flex-col gap-2 p-5" id="searchForm">
             <div className="flex flex-col md:flex-row gap-1 md:gap-0 justify-center">
 
+                {/* Input text field*/}
                 <div className="grid grid-cols-3 border-2 border-purple-600 rounded-lg md:border-r-0 md:rounded-r-none">
                 <input
                 className="border-0 col-span-2 placeholder-rose-950 text-rose-950 focus:ring-pink-400 focus:rounded-l-lg pl-3"
@@ -31,7 +33,8 @@ const handleSubmit = async (e) => {
                 onChange={(e)=>setTitle(e.target.value)}
                 required
                 />
-                
+
+                {/*Options for physical search radius*/}
                 <select onChange={(e)=>setRadius(e.target.value)} name="radius" id="radius" 
                 className=" border-0 cols-span-1 text-rose-950 focus:ring-pink-400 px-2">
                     <option value=""> Distance </option>
@@ -49,13 +52,15 @@ const handleSubmit = async (e) => {
                 
                 </div>
 
+                {/* Search button executes search, displays Loading state*/}
                 <button 
                 type="submit" 
                 className={`px-4 py-2 rounded-lg border-2 border-purple-600 md:border-l-0 md:rounded-l-none hover:bg-purple-600 hover:text-white
                 ${ loading ? "bg-gray-200 cursor-not-allowed" : "bg-rose-200 text-rose-950"}`}>
                 {loading ? "Searching..." : "Find jobs"}</button>
             </div>
-
+            
+            {/* Options for how old the job results can be*/}
             <div className="flex flex-wrap md:flex-row gap-3 md:gap-5 justify-center">
                 <select onChange={(e)=>setDatePosted(e.target.value)} name="datePosted" id="datePosted" 
                 className="bg-rose-200 border border-rose-200 text-rose-950 text-sm rounded-lg focus:ring-rose-400 focus:border-rose-400 block py-2 px-4">
@@ -67,7 +72,7 @@ const handleSubmit = async (e) => {
                     <option value="month">Month Ago</option>
                 </select>
 
-
+                {/*Options for type/level of employment */}
                 <select onChange={(e)=>setEmploymentType(e.target.value)} name="employment" id="employment"
                 className="bg-rose-200 border border-rose-200 text-rose-950 text-sm rounded-lg focus:ring-rose-400 focus:border-rose-400 block py-2 px-4">
                     <option value="">Employment Type</option>
@@ -77,6 +82,7 @@ const handleSubmit = async (e) => {
                     <option value="INTERN"> Intern </option>
                 </select>
 
+               {/*Chech button for whether user wants to see only remote jobs */} 
                 <div onChange={(e)=>setRemote(e.target.checked)}
                 className="flex items-center me-4  bg-rose-200 border border-rose-200 text-rose-950 text-sm rounded-lg focus:ring-rose-400 focus:border-rose-400 py-2 px-4">
                     <input id="remote" type="checkbox" value={remote} className="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded-lg focus:ring-purple-600 "/>

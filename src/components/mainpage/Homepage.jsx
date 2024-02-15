@@ -5,7 +5,6 @@ import SearchBar from "./SearchBar";
 import Jumbotron from "./Jumbotron";
 import JobListing from './JobListing';
 import Body from './Body';
-import ErrorMsg from './ErrorModal';
 
 
 
@@ -43,7 +42,7 @@ export default function Homepage() {
         if (response.data.data.length === 0) {
           setJobSearch([]);
           setShowJobListing(false);
-          setErrorMsg('Please rephrase your search.');
+          setErrorMsg('Please rephrase your search!');
         } else {
           setJobSearch(response.data.data);
           setShowJobListing(true);
@@ -58,8 +57,7 @@ export default function Homepage() {
   return (
     <>
     <Jumbotron/>
-    <SearchBar onSearch={handleSearch}/>
-    {errorMsg !== '' ? <ErrorMsg errorMessage={errorMsg} /> : null}
+    <SearchBar onSearch={handleSearch} errorMessage={errorMsg}/>
     {showJobListing ? <JobListing jobSearch={jobSearch}/> : <Body/>} {/* Conditional to show the JobListing only once response is received from API, otherwise the 'Body' component with features will continue to display*/}
     </>
   )

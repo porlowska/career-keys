@@ -1,4 +1,4 @@
-import { Popover } from 'flowbite-react';
+import { Popover } from 'flowbite';
 
 export default function ErrorPopover({errorMessage}){
     return (

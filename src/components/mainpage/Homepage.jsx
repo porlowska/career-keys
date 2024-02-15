@@ -6,7 +6,6 @@ import Jumbotron from "./Jumbotron";
 import JobListing from './JobListing';
 import Body from './Body';
 import ErrorPopover from './ErrorPopover';
-import { Popover } from 'flowbite-react';
 
 
 

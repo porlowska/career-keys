@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 import Jumbotron from "./Jumbotron";
 import JobListing from './JobListing';
 import Body from './Body';
-import ErrorMsg from './ErrorModal';
+import ErrorMsg from './ErrorM';
 
 
 
@@ -13,7 +13,7 @@ export default function Homepage() {
   //create useStates so that JobSearch and Listing can be dynamically updated based on user search
   const [jobSearch, setJobSearch]=useState([])
   const [showJobListing, setShowJobListing]=useState(false)
-  const [errorMsg, setErrorMsg] = useState('');
+  
   
   const handleSearch=async(title, radius, datePosted, employmentType, remote)=>{
     let url = `https://jsearch.p.rapidapi.com/search?query=${title}&page=10&num_pages=10`;
@@ -39,19 +39,10 @@ export default function Homepage() {
     //API Call, the useStates are updated here using a promissory event
     try {
       const response = await axios.get(url, options);
-        //If search is not completed it will display error messsage 
-        if (response.data.data.length === 0) {
-          setJobSearch([]);
-          setShowJobListing(false);
-          setErrorMsg('Please rephrase your search.');
-        } else {
-          setJobSearch(response.data.data);
-          setShowJobListing(true);
-          setErrorMsg('');
-        }
+      setJobSearch(response.data.data);
+      setShowJobListing(true);
     } catch (error) {
       console.error(error);
-      setErrorMsg('Please check your internet connection.');
     }
   }
   // React elements rendered here in the return statement
@@ -59,7 +50,6 @@ export default function Homepage() {
     <>
     <Jumbotron/>
     <SearchBar onSearch={handleSearch}/>
-    {errorMsg !== '' ? <ErrorMsg errorMessage={errorMsg} /> : null}
     {showJobListing ? <JobListing jobSearch={jobSearch}/> : <Body/>} {/* Conditional to show the JobListing only once response is received from API, otherwise the 'Body' component with features will continue to display*/}
     </>
   )
